@@ -1,0 +1,216 @@
+warning: calling `to_string` on `&&str`
+  --> src/swapper.rs:96:48
+   |
+96 |       .execute(active_command.iter().map(|arg| arg.to_string()).collect());
+   |                                                ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+   |
+   = note: `#[warn(clippy::inefficient_to_string)]` on by default
+   = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:110:29
+    |
+110 |     let pane_in_copy_mode = active_pane.get(1).unwrap().to_string();
+    |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*active_pane.get(1).unwrap()).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:112:32
+    |
+112 |     self.active_pane_id = Some(pane_id.to_string());
+    |                                ^^^^^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*pane_id).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:134:64
+    |
+134 |     let params: Vec<String> = options_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                                ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:222:63
+    |
+222 |     let params: Vec<String> = thumbs_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                               ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:240:48
+    |
+240 |     let params = swap_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:247:48
+    |
+247 |     let params = wait_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:254:52
+    |
+254 |     let params = retrieve_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                    ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:261:52
+    |
+261 |     let params = retrieve_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                    ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: calling `to_string` on `&&str`
+   --> src/swapper.rs:280:52
+    |
+280 |     let params = retrieve_command.iter().map(|arg| arg.to_string()).collect();
+    |                                                    ^^^^^^^^^^^^^^^ help: try dereferencing the receiver: `(*arg).to_string()`
+    |
+    = help: `&str` implements `ToString` through a slower blanket impl, but `str` has a fast specialization of `ToString`
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#inefficient_to_string
+
+warning: Constants have by default a `'static` lifetime
+ --> src/alphabets.rs:3:21
+  |
+3 | const ALPHABETS: [(&'static str, &'static str); 22] = [
+  |                    -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = note: `#[warn(clippy::redundant_static_lifetimes)]` on by default
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/alphabets.rs:3:35
+  |
+3 | const ALPHABETS: [(&'static str, &'static str); 22] = [
+  |                                  -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/colors.rs:4:18
+  |
+4 | const COLORS: [(&'static str, Color); 9] = [
+  |                 -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/state.rs:5:28
+  |
+5 | const EXCLUDE_PATTERNS: [(&'static str, &'static str); 1] =
+  |                           -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/state.rs:5:42
+  |
+5 | const EXCLUDE_PATTERNS: [(&'static str, &'static str); 1] =
+  |                                         -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/state.rs:8:20
+  |
+8 | const PATTERNS: [(&'static str, &'static str); 13] = [
+  |                   -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: Constants have by default a `'static` lifetime
+ --> src/state.rs:8:34
+  |
+8 | const PATTERNS: [(&'static str, &'static str); 13] = [
+  |                                 -^^^^^^^---- help: consider removing `'static`: `&str`
+  |
+  = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#redundant_static_lifetimes
+
+warning: use of `expect` followed by a function call
+  --> src/alphabets.rs:76:6
+   |
+76 |     .expect(format!("Unknown alphabet: {}", alphabet_name).as_str()); // FIXME
+   |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try this: `unwrap_or_else(|| panic!("Unknown alphabet: {}", alphabet_name))`
+   |
+   = note: `#[warn(clippy::expect_fun_call)]` on by default
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#expect_fun_call
+
+warning: use of `expect` followed by a function call
+  --> src/colors.rs:21:6
+   |
+21 |     .expect(format!("Unknown color: {}", color_name).as_str()); // FIXME
+   |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try this: `unwrap_or_else(|| panic!("Unknown color: {}", color_name))`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#expect_fun_call
+
+warning: use of `unwrap_or` followed by a function call
+  --> src/state.rs:48:25
+   |
+48 |       self.hint.clone().unwrap_or("<undefined>".to_string())
+   |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try this: `unwrap_or_else(|| "<undefined>".to_string())`
+   |
+   = note: `#[warn(clippy::or_fun_call)]` on by default
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#or_fun_call
+
+warning: writing `&Vec<_>` instead of `&[_]` involves one more reference and cannot be used with non-Vec-based slices.
+  --> src/state.rs:66:21
+   |
+66 |   pub fn new(lines: &'a Vec<&'a str>, alphabet: &'a str, regexp: &'a Vec<&'a str>) -> State<'a> {
+   |                     ^^^^^^^^^^^^^^^^ help: change this to: `&[&'a str]`
+   |
+   = note: `#[warn(clippy::ptr_arg)]` on by default
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_arg
+
+warning: writing `&Vec<_>` instead of `&[_]` involves one more reference and cannot be used with non-Vec-based slices.
+  --> src/state.rs:66:66
+   |
+66 |   pub fn new(lines: &'a Vec<&'a str>, alphabet: &'a str, regexp: &'a Vec<&'a str>) -> State<'a> {
+   |                                                                  ^^^^^^^^^^^^^^^^ help: change this to: `&[&'a str]`
+   |
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#ptr_arg
+
+warning: called `.nth(0)` on a `std::iter::Iterator`
+   --> src/state.rs:102:37
+    |
+102 |           .filter_map(|tuple| match tuple.1.find_iter(chunk).nth(0) {
+    |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try calling: `tuple.1.find_iter(chunk).next()`
+    |
+    = note: `#[warn(clippy::iter_nth_zero)]` on by default
+    = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#iter_nth_zero
+
+warning: this function has too many arguments (12/7)
+  --> src/view.rs:24:3
+   |
+24 | /   pub fn new(
+25 | |     state: &'a mut state::State<'a>,
+26 | |     multi: bool,
+27 | |     reverse: bool,
+...  |
+36 | |     hint_background_color: Color,
+37 | |   ) -> View<'a> {
+   | |_______________^
+   |
+   = note: `#[warn(clippy::too_many_arguments)]` on by default
+   = help: for further information visit https://rust-lang.github.io/rust-clippy/master/index.html#too_many_arguments
+
+    Finished dev [unoptimized + debuginfo] target(s) in 0.03s
